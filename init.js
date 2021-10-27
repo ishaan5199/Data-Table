@@ -20,7 +20,7 @@
 
 var arrayData;
 const urlSearchParams = new URLSearchParams(window.location.search);
-console.log("yo",urlSearchParams);
+console.log(urlSearchParams);
 const params = Object.fromEntries(urlSearchParams.entries());
 
 fetch('https://opensheet.vercel.app/1OzpHafZbyBR4HhL0AFzZCxE9wLFvQt5KVvifp2PrxIE/Sheet1').then(res => res.json()).then(data => {
