@@ -24,10 +24,6 @@ fetch(docSheet).then(res => res.json()).then(data => {
             "dom":'<"top"if><"table"t><"bottom"p>',
             lengthChange: false,
         } );
-        var element = document.getElementsByClassName("pagination")[0];
-        element.classList.add("justify-content-center")
-        var el2 = document.getElementsByClassName("page-link");
-        
     })
 })
 
