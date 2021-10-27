@@ -4,11 +4,11 @@
     font-family: "Lexend Deca";
 }
 .table{
-    background-color: rgb(0, 0, 0);
+    background-color: black;
     text-align: center;
     font-size: 1rem;
     margin: 1rem 0 1rem 0;
-    color:rgb(194, 119, 218);
+    color: white;
 }
 thead{
     color:#ffc089;
