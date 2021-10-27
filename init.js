@@ -18,7 +18,7 @@
     
 } ); */
 
-var arrayData;
+var arrayData = [];
 const urlSearchParams = new URLSearchParams(window.location.search);
 
 const params = Object.fromEntries(urlSearchParams.entries());
@@ -26,15 +26,17 @@ console.log(params["val"]);
 
 const docSheet = "https://opensheet.vercel.app/" + params["val"] + "/Sheet1"
 fetch(docSheet).then(res => res.json()).then(data => {
-    arrayData = data;
+    for (let index = 0; index < data.length; index++) {
+        arrayData.push([data[index]["Name"], data[index]["Position"], data[index]["Institute"]])
+    }
 }).then(() => {
     $(document).ready(function(){
         $('#table').DataTable( {
             data: arrayData,
             columns:[
-                {arrayData : "Position"},
-                {arrayData : "Name"},
-                {arrayData : "Institute"}
+                {title : "Position"},
+                {title : "Name"},
+                {title : "Institute"}
             ]
         } );
     })
