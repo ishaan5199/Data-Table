@@ -7,7 +7,7 @@ console.log(params["val"]);
 const docSheet = "https://opensheet.vercel.app/" + params["val"] + "/Sheet1"
 fetch(docSheet).then(res => res.json()).then(data => {
     for (let index = 0; index < data.length; index++) {
-        arrayData.push([data[index]["Position"], data[index]["Name"], data[index]["Institute"]])
+        arrayData.push([data[index]["Position"], data[index]["Name"], data[index]["Institute"], data[index]["Comment"]])
     }
 }).then(() => {
     $(document).ready(function(){
@@ -16,7 +16,8 @@ fetch(docSheet).then(res => res.json()).then(data => {
             columns:[
                 {title : "Position"},
                 {title : "Name"},
-                {title : "Institute"}
+                {title : "Institute"},
+                {title : "Comments"}
             ],
             columnDefs:[
                 {"width": "20%" ,"targets": 0}
