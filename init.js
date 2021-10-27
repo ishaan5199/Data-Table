@@ -1,23 +1,3 @@
-/* $(document).ready(function() {
-    fetch('https://opensheet.vercel.app/1OzpHafZbyBR4HhL0AFzZCxE9wLFvQt5KVvifp2PrxIE/Sheet1')
-        .then(res => res.json())
-        .then(data => {
-        //console.log(data);
-            
-        arrayData = data.map(({Position, Name, Institute}) => ([Position, Name, Institute]))
-
-        $('#table').DataTable( {
-            data: arrayData,
-            columns:[
-                {title : "Position"},
-                {title : "Name"},
-                {title : "Institute"}
-            ]
-        } );
-    })
-    
-} ); */
-
 var arrayData = [];
 const urlSearchParams = new URLSearchParams(window.location.search);
 
@@ -37,8 +17,17 @@ fetch(docSheet).then(res => res.json()).then(data => {
                 {title : "Position"},
                 {title : "Name"},
                 {title : "Institute"}
-            ]
+            ],
+            columnDefs:[
+                {"width": "20%" ,"targets": 0}
+            ],
+            "dom":'<"top"if><"table"t><"bottom"p>',
+            lengthChange: false,
         } );
+        var element = document.getElementsByClassName("pagination")[0];
+        element.classList.add("justify-content-center")
+        var el2 = document.getElementsByClassName("page-link");
+        
     })
 })
 

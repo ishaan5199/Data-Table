@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    font-family: "Lexend Deca";
+}
+.table{
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 1rem;
+    margin: 1rem 0 1rem 0;
+    color:rgb(194, 119, 218);
+}
+thead{
+    color:#ffc089;
+}
+.top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.dataTables_info{
+    padding-bottom: 1rem;
+    display: inline;
+}
+.dataTables_filter{
+    
+    display: inline;
+}
+.form-control{
+    border-radius: 50px;
+    text-align: center;
+}
+.form-control:focus {
+    border-color: black;
+;}
+/* .paginate_button a{
+    color: #ffc089;
+} */
+.page-link {
+    position: relative; 
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #ffc089;
+    background-color: #000000;
+    border-color:#000000;
+}
+   
+.page-item.disabled .page-link {
+    color: #ffc089;
+    pointer-events: none;
+    cursor: auto;
+    background-color: #000000;
+    border-color: #000000;
+}
+ 
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #000000;
+    border-color: #000000;
+}
+ 
+.page-link:focus, .page-link:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: #000000;
+    border-color: #000000;
+}
+
+@media(max-width: 468px){
+    .top{
+        flex-direction: column;
+        justify-content: center;
+    }
+}
