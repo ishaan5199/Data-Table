@@ -15,7 +15,7 @@ fetch(docSheet).then(res => res.json()).then(data => {
             data: arrayData,
             columns:[
                 {title : "Position"},
-                {title : "Name"},
+                {title : "Participant Name"},
                 {title : "Institute"},
             ],
             columnDefs:[
