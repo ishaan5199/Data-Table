@@ -1,4 +1,5 @@
 var arrayData = [];
+var columnData = [];
 const urlSearchParams = new URLSearchParams(window.location.search);
 
 const params = Object.fromEntries(urlSearchParams.entries());
@@ -6,18 +7,18 @@ console.log(params["val"]);
 
 const docSheet = "https://opensheet.vercel.app/" + params["val"] + "/Sheet1"
 fetch(docSheet).then(res => res.json()).then(data => {
-    for (let index = 0; index < data.length; index++) {
-        arrayData.push([Number(data[index]["Position"]), data[index]["Name"], data[index]["Institute"]])
-    }
+    arrayData = data;
+    keyData = Object.keys(arrayData[0]);
+
+    keyData.forEach(element => {
+        columnData.push({"data" : element, "title" : element})
+    });
+
 }).then(() => {
     $(document).ready(function(){
         $('#table').DataTable( {
             data: arrayData,
-            columns:[
-                {title : "Position"},
-                {title : "Participant Name"},
-                {title : "Institute"},
-            ],
+            "columns": columnData,
             columnDefs:[
                 {"width": "20%" ,"targets": 0}
             ],
