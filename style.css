@@ -35,6 +35,9 @@
 thead{
     color:#ffc089;
 }
+table.dataTable tbody td {
+    vertical-align: middle;
+}
 .top{
     display: flex;
     justify-content: space-between;
