@@ -38,6 +38,10 @@ thead{
 table.dataTable tbody td {
     vertical-align: middle;
 }
+hr{
+    width: 65%;
+    margin: .8rem auto .8rem;
+}
 .top{
     display: flex;
     justify-content: space-between;
