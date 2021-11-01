@@ -14,7 +14,7 @@ fetch(docSheet).then(res => res.json()).then(data => {
         columnData.push({"data" : element, "title" : element})
     });
 
-    if(arrayData[0]["Team Members"] != ""){
+    if(Object.keys(arrayData[0]).length != 3 && arrayData[0]["Team Members"] != ""){
         for (let index = 0; index < arrayData.length; index++) {
             arrayData[index]["Team Members"] = arrayData[index]["Team Members"].split(",").join("<br/>");
             arrayData[index]["Institute"] = arrayData[index]["Institute"].split(",").join("<br/>");
@@ -22,6 +22,8 @@ fetch(docSheet).then(res => res.json()).then(data => {
     }
 
 }).then(() => {
+    console.log(arrayData);
+
     $(document).ready(function(){
         $('#table').DataTable( {
             data: arrayData,
