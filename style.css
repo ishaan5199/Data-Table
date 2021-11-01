@@ -35,11 +35,6 @@
 thead{
     color:#ffc089;
 }
-td{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 .top{
     display: flex;
     justify-content: space-between;
