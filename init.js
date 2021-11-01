@@ -5,7 +5,7 @@ const urlSearchParams = new URLSearchParams(window.location.search);
 const params = Object.fromEntries(urlSearchParams.entries());
 console.log(params["val"]);
 
-const docSheet = "https://opensheet.vercel.app/" + /* params["val"] */"1JKhyzO4i2Y0qScSVORNXUyLWmAM1eqVXeeJOdvpzp00" + "/Sheet1"
+const docSheet = "https://opensheet.vercel.app/" + params["val"] + "/Sheet1"
 fetch(docSheet).then(res => res.json()).then(data => {
     arrayData = data;
     keyData = Object.keys(arrayData[0]);
