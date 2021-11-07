@@ -4,7 +4,7 @@ const urlSearchParams = new URLSearchParams(window.location.search);
 
 const params = Object.fromEntries(urlSearchParams.entries());
 
-const docSheet = "https://opensheet.vercel.app/" + params["val"] + "/Sheet1"
+const docSheet = "https://opensheet.vercel.app/" + params["val"] + "/Sheet1";
 
 fetch(docSheet).then(res => res.json()).then(data => {
     arrayData = data;
@@ -14,11 +14,12 @@ fetch(docSheet).then(res => res.json()).then(data => {
         columnData.push({"data" : element, "title" : element})
     });
 
-    if(Object.keys(arrayData[0]).length != 3){
+    if(keyData.length != 3){
         for (let index = 0; index < arrayData.length; index++) {
-            arrayData[index][Object.keys(arrayData[0])[2]] = arrayData[index][Object.keys(arrayData[0])[2]].split(",").join("<br/><hr/>");
-            arrayData[index][Object.keys(arrayData[0])[3]] = arrayData[index][Object.keys(arrayData[0])[3]].split(",").join("<br/><hr/>");
+            arrayData[index][keyData[keyData.length - 2]] = arrayData[index][keyData[keyData.length - 2]].split(",").join("<br/><hr/>");
+            arrayData[index][keyData[keyData.length - 1]] = arrayData[index][keyData[keyData.length - 1]].split(",").join("<br/><hr/>");
         }
+        
     }
 
 }).then(() => {
