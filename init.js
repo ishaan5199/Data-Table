@@ -2,7 +2,6 @@ const urlSearchParams = new URLSearchParams(window.location.search);
 const params = Object.fromEntries(urlSearchParams.entries());
 const docSheet = "https://opensheet.elk.sh/" + (!params["val"] ? "139xIKz3YSN7_ehr6Ha4DwpYynq86YlYm8BJDw8HCQlA" : params["val"]) + "/Sheet1";
 
-
 const fetchStore = async () => {
     const response = await fetch(docSheet);
     const data = await response.json();
