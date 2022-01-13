@@ -38,10 +38,7 @@
 1. HTML, CSS, JS
 
 ## Authors
-Write about yourself or your organization, who created this project. For example:
- 
-Sagar Ganiga  – tech.ganiga@gmail.com
+Ishaan Mahesh
  
  You can find me here at:
-[Github](https://github.com/SagarGaniga)
-[LinkedIn](https://www.linkedin.com/in/sagar-ganiga/)
+[LinkedIn](https://www.linkedin.com/in/ishaan-mahesh/)
