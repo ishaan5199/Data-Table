@@ -1,19 +1,24 @@
-var arrayData = [];
-var columnData = [];
 const urlSearchParams = new URLSearchParams(window.location.search);
 
 const params = Object.fromEntries(urlSearchParams.entries());
 
 const docSheet = "https://opensheet.vercel.app/" + /* params["val"] */"1OzpHafZbyBR4HhL0AFzZCxE9wLFvQt5KVvifp2PrxIE" + "/Sheet1";
 
-fetch(docSheet).then(res => res.json()).then(data => {
+
+const fetchStore = async () => {
+    const response = await fetch(docSheet);
+    const data = await response.json();
+
+    var arrayData = [];
+    var columnData = [];
+
     arrayData = data;
     keyData = Object.keys(arrayData[0]);
-
     keyData.forEach(element => {
         columnData.push({"data" : element, "title" : element})
     });
 
+    /* for multidata in last two columns (can be customized) */
     if(keyData.length != 3){
         for (let index = 0; index < arrayData.length; index++) {
             arrayData[index][keyData[keyData.length - 2]] = arrayData[index][keyData[keyData.length - 2]].split(",").join("<br/><hr/>");
@@ -22,7 +27,6 @@ fetch(docSheet).then(res => res.json()).then(data => {
         
     }
 
-}).then(() => {
     $(document).ready(function(){
         $('#table').DataTable( {
             data: arrayData,
@@ -38,5 +42,6 @@ fetch(docSheet).then(res => res.json()).then(data => {
             ordering: false
         } );
     })
+}
 
-})
+fetchStore();
