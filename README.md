@@ -1,97 +1,41 @@
-# Your Project Title
+# Data-Table
 > Data table component for displaying leaderboard in https://www.dhruvaiiitk.tech (Technical Fest website)
 
-![](https://www.logistec.com/wp-content/uploads/2017/12/placeholder.png)
-
+![2022-01-13](https://user-images.githubusercontent.com/78961353/149301872-fd8f025c-c3cb-47ef-a2dc-29bd8882f3c1.png)
 
 ## Requirements  (Prerequisites)
-Tools and packages required to successfully install this project.
-For example:
-* Linux [Install](https://link-for-setup-guide)
-* Python 3.3 and up [Install](https://link-for-setup-guide)
-
-## Installation
-A step by step list of commands / guide that informs how to install an instance of this project. 
-
-`$ pip install foobar`
-
-`$ npm install project-name --save`
-
-`$ any other command`
-
-For Linux and OS X
-
-`npm install project-name --save`
-
-For Windows
-
-`git clone project-url`
- 
-## Screenshots
-Use this space to give a little demo of your project. Attach important screenshots if applicable. This section is optional and might not be applicable in some cases.
-
-![Screenshots of projects](https://dradisframework.com/images/pro/screenshots/screenshot-62_small.png)
-
-![Screenshots of the project](http://securityroots.com/blog/wp-content/uploads/2013/12/snowcrash-01.png)
+* [Google Sheets](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiVrfOTtK71AhWBwzgGHTMsB7IQFnoECAUQAQ&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2F&usg=AOvVaw1BH_c8RezUn6MjKzXv92te)
+* [Opensheet](https://github.com/benborgers/opensheet#readme)
 
 ## Features
-Write a little about unique features of your project and what makes it outstanding. Describe the functionalities of your project. You can make a list of it with some descriptions, like:
-* Used Bootstrap to make it 100% responsive
-* Used AI/ML to automate some stuff
-* Etc Etc......
+* Made use of the [datatable](https://datatables.net) api to create the dynamic table
+* Styling via inbuilt bootstrap 5 plugin for datatable and basic css
+* Converted google sheets data into JSON format via [opensheet](https://github.com/benborgers/opensheet#readme) api
 
-## Usage example
-Show how and what your project does. Users should figure out how your project solves their problem by looking at the code example. Spice this up with code blocks and potentially more screenshots. These examples should motivate the users to use your project. 
-```python
-import foobar
+## Usage
 
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
-``` 
+1. Create your table in google sheets, Sheet1 (if any other sheet please see [Deployment Notes]) (with the first row dedicated to specifying the column headings followed by actual data)
 
-Mention any other documentation or live example available for reverence.
+![2022-01-13 (2)](https://user-images.githubusercontent.com/78961353/149303899-f9e1a635-34d5-41db-8435-86d31661685a.png)<br>
 
-## Running the tests
-Describe and show how to run the tests with code examples.. Explain how to run the automated tests for this system.  Also explain how to test and why to test.
+2. Make the sheet public (change it from restricted to anyone with the link and copy the link) eg : https://docs.google.com/spreadsheets/d/139xIKz3YSN7_ehr6Ha4DwpYynq86YlYm8BJDw8HCQlA/edit?usp=sharing , extract the portion after `d/` and before `/edit..` eg : `139xIKz3YSN7_ehr6Ha4DwpYynq86YlYm8BJDw8HCQlA`
 
-Give code examples as:
-1. `test example 1`
-2. `test example 2`
-3. `npm test`
-4. `test till you finish`
+3. Place the extracted portion as a query parameter in the link `?val=<id>` eg : https://ishaan5199.github.io/Data-Table/?val=139xIKz3YSN7_ehr6Ha4DwpYynq86YlYm8BJDw8HCQlA
+
+4. If not provided as `val` parameter, dummy table will be displayed.
+
+5. Google Sheet can have n number of columns and rows, for specific splitting and displaying of data in any column, alter after line 19's comment 
 
 ## Deployment Notes
-Explain how to deploy your project  on a live server. To do so include step by step guide. Potentially do this for multiple platforms. 
-```sh
-virtualenv foobar
-npm test
-make install 
-pip install -e .
-More examples please....
-```
+
+1. Returned JSON data from the opensheet api : https://opensheet.elk.sh/1OzpHafZbyBR4HhL0AFzZCxE9wLFvQt5KVvifp2PrxIE/Sheet1
+
+2. If working on any other sheet replace `/Sheet1` with your specific sheet on line 3 of init.js file
+
+3. [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)  
 
 ## Tech Stack / Built With
-List down the technology / frameworks / tools / technology you have used in this project.
-1. [Laravel](https://laravel.com/) - The PHP framework
-2. [IPFS](https://ipfs.io/)  - A peer-to-peer hypermedia protocol to make the web faster, safer, and more open. 
-3. [Android](https://www.android.com/) - The world’s most popular mobile OS
-
-## How to Contribute
-Mention how anyone can contribute to make this project more productive or fix bugs in it.  
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. Please make sure to update tests as appropriate. If you'd like to contribute, please fork the repository and make changes as you'd like. Pull requests are warmly welcome.
-
-Steps to contribute:
-1. Fork this repository (link to your repository)
-2. Create your feature branch (git checkout -b feature/fooBar)
-3. Commit your changes (git commit -am 'Add some fooBar')
-4. Push to the branch (git push origin feature/fooBar)
-5. Create a new Pull Request
-
-Additionally you can create another document called CONTRIBUTING.md which gives instructions about how to contribute. 
-
-Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
+1. HTML, CSS, JS
 
 ## Authors
 Write about yourself or your organization, who created this project. For example:
@@ -101,26 +45,3 @@ Sagar Ganiga  – tech.ganiga@gmail.com
  You can find me here at:
 [Github](https://github.com/SagarGaniga)
 [LinkedIn](https://www.linkedin.com/in/sagar-ganiga/)
-
-## Credits
-Give credits to all the useful resources you used to create this project. It could be a link to any repository which inspired you to build this project, any blog or links to people who contributed in this project.
-
-A heartfelt thank you to [@UjalaJha](https://github.com/UjalaJha) for the encouragement I needed to get this idea off the ground and start writing!
-
-Thank you to the following awesome geeks for sending PRs and improving the Quality of this project ❤️
-* [@UjalaJha](https://github.com/UjalaJha)
-
-Here's a list of other related projects / blogs which helped me in creating the best possible version of my project:
-* [README-Template.md](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2) by [@PurpleBooth](https://gist.github.com/PurpleBooth)
-* [A Beginners Guide to writing a Kickass README ✍](https://medium.com/@meakaakka/a-beginners-guide-to-writing-a-kickass-readme-7ac01da88ab3) by Akash Nimare
-* [readme-best-practices](https://github.com/jehna/readme-best-practices) by [@jehna](https://github.com/jehna/)
-* [readme-template](https://github.com/dbader/readme-template/blob/master/README.md) by [@dbader](https://github.com/dbader/)
-* [art-of-readme](https://github.com/noffle/art-of-readme/blob/master/README.md) by [@noffle](https://github.com/noffle/)
-* [Make a README](https://www.makeareadme.com/)
-
-## License
-A short snippet describing the license (MIT, Apache etc).
-
-This project is licensed under the MIT License - see the LICENSE.md file for details
-
-MIT © Yourname
