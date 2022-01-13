@@ -1,8 +1,6 @@
 const urlSearchParams = new URLSearchParams(window.location.search);
-
 const params = Object.fromEntries(urlSearchParams.entries());
-
-const docSheet = "https://opensheet.vercel.app/" + /* params["val"] */"1OzpHafZbyBR4HhL0AFzZCxE9wLFvQt5KVvifp2PrxIE" + "/Sheet1";
+const docSheet = "https://opensheet.elk.sh/" + (!params["val"] ? "139xIKz3YSN7_ehr6Ha4DwpYynq86YlYm8BJDw8HCQlA" : params["val"]) + "/Sheet1";
 
 
 const fetchStore = async () => {
