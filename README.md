@@ -28,7 +28,7 @@
 
 ## Deployment Notes
 
-1. Returned JSON data from the opensheet api : https://opensheet.elk.sh/1OzpHafZbyBR4HhL0AFzZCxE9wLFvQt5KVvifp2PrxIE/Sheet1
+1. Returned JSON data from the opensheet api : https://opensheet.elk.sh/139xIKz3YSN7_ehr6Ha4DwpYynq86YlYm8BJDw8HCQlA/Sheet1
 
 2. If working on any other sheet replace `/Sheet1` with your specific sheet on line 3 of init.js file
 
